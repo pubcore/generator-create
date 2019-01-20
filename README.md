@@ -1,4 +1,4 @@
-## create a minimal yoaman generator scaffolding
+## create a minimal yeoman generator scaffolding
 It will setup jslint and mocha for testing of the generator.
 
 #### Prerequisites
