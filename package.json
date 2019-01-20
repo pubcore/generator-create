@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Create scaffold minimal yeoman generator",
   "files": [
-    "app"
+    "app/*"
   ],
   "scripts": {
     "test": "mocha --recursive"
