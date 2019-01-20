@@ -1,0 +1,21 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%= repository %>"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "<%= author %>",
+  "license": "<%= license %>",
+  "engines" : { "node" : ">=10.15.0" }
+}
