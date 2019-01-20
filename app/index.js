@@ -40,7 +40,7 @@ module.exports = class extends Generator {
 			{globOptions:{dot:true}}
 		)
 		this.fs.copyTpl(
-			this.templatePath('package.json'),
+			this.templatePath('package-json'),
 			this.destinationPath('./package.json'),
 			{...(this.answers)}
 		)
