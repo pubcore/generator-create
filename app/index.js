@@ -17,7 +17,8 @@ module.exports = class extends Generator {
 		},{
 			type    : 'input', name    : 'name',
 			message : 'Your project name',
-			default : ({scope}) => (scope ? `@${scope}/` : '') + this.appname
+			default : ({scope}) => (scope ? `@${scope}/` : '')
+				+ this.appname.replace(/\s+/g, '-')
 		},{
 			type: 'input', name: 'description',
 			message: 'Package description',
