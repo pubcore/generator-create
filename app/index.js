@@ -51,7 +51,7 @@ module.exports = class extends Generator {
 			'eslint', 'mocha', 'yeoman-test', 'eslint-plugin-mocha'
 		], {'save-dev': true })
 		this.npmInstall([
-			'update-notifier'
+			'update-notifier', 'yeoman-generator'
 		], {'save': true })
 	}
 }
