@@ -7,7 +7,6 @@ describe('ui generator', () => {
 	it('creates some core files, each generator should have', () =>
 		helpers.run(path.join(__dirname, '../app'))
 			.withPrompts({
-				name:'my-project',
 				description:'a test project'
 			}).then(dir => {
 				ok(fs.existsSync(`${dir}/package.json`))
