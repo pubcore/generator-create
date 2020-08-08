@@ -32,14 +32,15 @@ module.exports = class extends Generator {
 	}
 	writing(){
 		//beware handling of ignore files (should be not in template/static)
-		// this.fs.copy(
-		// 	this.templatePath('_gitignore'),
-		// 	this.destinationPath('.gitignore')
-		// )
-		// this.fs.copy(
-		// 	this.templatePath('_npmignore'),
-		// 	this.destinationPath('.npmignore')
-		// )
+		this.fs.copy(
+			this.templatePath('_gitignore'),
+			this.destinationPath('.gitignore')
+		)
+		this.fs.copyTpl(
+			this.templatePath('package-json'),
+			this.destinationPath('./package.json'),
+			{...(this.answers)}
+		)
 		// example for static files
 		// this.fs.copy(
 		// 	this.templatePath('static/**'),
@@ -47,12 +48,6 @@ module.exports = class extends Generator {
 		// 	{globOptions:{dot:true}}
 		// )
 		//
-		// expample for files with replacements params based on answers
-		// this.fs.copyTpl(
-		// 	this.templatePath('path-to-file-relative-to-template-dir'),
-		// 	this.destinationPath('destintation-path-relative-to-package-root'),
-		// 	{...(this.answers)}
-		// )
 	}
 	install(){
 		this.log('Install packages ...')
