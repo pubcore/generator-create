@@ -17,7 +17,7 @@ cd generator-some-stuff
 ```
 1. Create scaffolding of a generator. You will be asked for some global settings, which will be saved in package.json:
 ```
-npx -p @pubcore/generator-create yo @pubcore/create
+npx -p @pubcore/generator-create -p yo yo @pubcore/create
 ```
 1. Test creation by execute prepared test:
 
