@@ -16,5 +16,5 @@ describe('ui generator', () => {
 				ok(existsSync(`${dir}/app/index.js`))
 				ok(readFileSync(`${dir}/package.json`, 'utf-8').match(RegExp(testPackageName, 'g')))
 			})
-	)
+	).timeout(60000)
 })

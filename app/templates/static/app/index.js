@@ -1,4 +1,4 @@
-var Generator = require('yeoman-generator'),
+const Generator = require('yeoman-generator'),
 	{basename, resolve} = require('path')
 
 module.exports = class extends Generator {
@@ -56,9 +56,8 @@ module.exports = class extends Generator {
 	}
 	install(){
 		this.log('Install packages ...')
-		this.npmInstall([
-			'eslint', 'mocha', 'yeoman-test'
-		], {'save-dev': true })
-		this.npmInstall([], {'save': true })
+		this.spawnCommandSync('npm', ['i', '--save-dev', 'eslint', 'mocha', 'yeoman-test'])
+		this.spawnCommandSync('npm', ['i', 'yeoman-generator'])
+		this.spawnCommandSync('npx', ['eslint', '--init'])
 	}
 }
