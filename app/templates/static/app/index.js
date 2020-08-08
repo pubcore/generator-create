@@ -1,9 +1,5 @@
 var Generator = require('yeoman-generator'),
-	updateNotifier = require('update-notifier'),
-	pkg = require('../package.json'),
 	{basename, resolve} = require('path')
-
-updateNotifier({pkg}).notify()
 
 module.exports = class extends Generator {
 	constructor(args, opts) {
