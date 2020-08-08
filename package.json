@@ -1,6 +1,6 @@
 {
   "name": "@pubcore/generator-create",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Create scaffold minimal yeoman generator",
   "files": [
     "app"
