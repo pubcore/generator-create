@@ -21,8 +21,8 @@ module.exports = class extends Generator {
 			type: 'input', name: 'license', default: 'MIT',
 			message: 'License',
 		},{
-			type: 'input', name: 'author', default: ({scope}) => scope,
-			message: 'Author',
+			type: 'input', name: 'author', default: () => this.scope,
+			message: 'Author'
 		},{
 			type: 'input', name: 'repository',
 			message: 'Repository uri',

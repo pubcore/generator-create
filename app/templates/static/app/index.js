@@ -11,12 +11,13 @@ module.exports = class extends Generator {
 	}
 	initializing(){
 		this.scope = basename(resolve(process.cwd(), '..'))
+		this.localName = this.appname.replace(/\s+/g, '-')
 	}
 	async prompting() {
 		this.answers = await this.prompt([{
 			type:'input', name:'name',
 			message : 'Your project name',
-			default : () => `@${this.scope}/${this.appname.replace(/\s+/g, '-')}`
+			default : () => `@${this.scope}/${this.localName}`
 		},{
 			type:'input', name:'description',
 			message: 'Package description',
