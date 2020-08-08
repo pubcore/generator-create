@@ -11,9 +11,6 @@ module.exports = class extends Generator {
 	}
 	async prompting() {
 		this.answers = await this.prompt([{
-			type: 'input', name: 'scope',
-			message: 'Your scope (without @)',
-		},{
 			type    : 'input', name    : 'name',
 			message : 'Your project name',
 			default : () => `@${this.scope}/${this.localName}`
