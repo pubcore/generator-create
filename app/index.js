@@ -1,14 +1,13 @@
 var Generator = require('yeoman-generator'),
-	updateNotifier = require('update-notifier'),
-	pkg = require('../package.json')
-
-updateNotifier({pkg}).notify()
+	{basename, resolve} = require('path')
 
 module.exports = class extends Generator {
 	constructor(args, opts) {
 		super(args, opts)
 	}
 	initializing(){
+		this.scope = basename(resolve(process.cwd(), '..'))
+		this.localName = this.appname.replace(/\s+/g, '-')
 	}
 	async prompting() {
 		this.answers = await this.prompt([{
@@ -17,8 +16,7 @@ module.exports = class extends Generator {
 		},{
 			type    : 'input', name    : 'name',
 			message : 'Your project name',
-			default : ({scope}) => (scope ? `@${scope}/` : '')
-				+ this.appname.replace(/\s+/g, '-')
+			default : () => `@${this.scope}/${this.localName}`
 		},{
 			type: 'input', name: 'description',
 			message: 'Package description',
@@ -51,7 +49,7 @@ module.exports = class extends Generator {
 			'eslint', 'mocha', 'yeoman-test', 'eslint-plugin-mocha'
 		], {'save-dev': true })
 		this.npmInstall([
-			'update-notifier', 'yeoman-generator'
+			'yeoman-generator'
 		], {'save': true })
 	}
 }

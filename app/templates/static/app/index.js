@@ -50,7 +50,7 @@ module.exports = class extends Generator {
 		// 	{globOptions:{dot:true}}
 		// )
 		//
-		// expample for files with replacements prams based on answers
+		// expample for files with replacements params based on answers
 		// this.fs.copyTpl(
 		// 	this.templatePath('path-to-file-relative-to-template-dir'),
 		// 	this.destinationPath('destintation-path-relative-to-package-root'),
@@ -62,8 +62,6 @@ module.exports = class extends Generator {
 		this.npmInstall([
 			'eslint', 'mocha', 'yeoman-test'
 		], {'save-dev': true })
-		this.npmInstall([
-			'update-notifier'
-		], {'save': true })
+		this.npmInstall([], {'save': true })
 	}
 }

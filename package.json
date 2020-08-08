@@ -21,7 +21,6 @@
     "node": ">=10.15.0"
   },
   "dependencies": {
-    "update-notifier": "^4.1.0",
     "yeoman-generator": "^3.2.0"
   },
   "devDependencies": {

@@ -1,17 +1,20 @@
 const helpers = require('yeoman-test'),
-	path = require('path'),
-	fs = require('fs'),
-	{ok} = require('assert').strict
+	{join, basename, dirname} = require('path'),
+	{ok} = require('assert').strict,
+	{readFileSync, existsSync} = require('fs')
 
 describe('ui generator', () => {
 	it('creates some core files, each generator should have', () =>
-		helpers.run(path.join(__dirname, '../app'))
+		helpers.run(join(__dirname, '../app'))
 			.withPrompts({
 				description:'a test project'
 			}).then(dir => {
-				ok(fs.existsSync(`${dir}/package.json`))
-				ok(fs.existsSync(`${dir}/test/spec.js`))
-				ok(fs.existsSync(`${dir}/app/index.js`))
+				//by convention, default packagename is based on directory names
+				var testPackageName = basename(dirname(dir)) + '/' + basename(dir)
+				ok(existsSync(`${dir}/package.json`))
+				ok(existsSync(`${dir}/test/spec.js`))
+				ok(existsSync(`${dir}/app/index.js`))
+				ok(readFileSync(`${dir}/package.json`, 'utf-8').match(RegExp(testPackageName, 'g')))
 			})
 	)
 })
