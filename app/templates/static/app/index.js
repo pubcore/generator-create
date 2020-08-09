@@ -38,7 +38,6 @@ module.exports = class extends Generator {
 		}])
 	}
 	writing(){
-		//beware handling of ignore files (should be not in template/static)
 		var replacements = {...this.answers, ...this.initial}
 
 		this.fs.copy(this.templatePath('static/**/*'), this.destinationPath('.'), {globOptions:{dot:true}} )
