@@ -3,6 +3,8 @@ const helpers = require('yeoman-test'),
 	{ok} = require('assert').strict,
 	{readFileSync, existsSync} = require('fs')
 
+before(() => helpers.setUpTestDirectory(join(__dirname, 'generator-test')))
+
 describe('ui generator', () => {
 	it('creates some core files, each generator should have', () =>
 		helpers.run(join(__dirname, '../app'))
