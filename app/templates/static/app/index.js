@@ -12,9 +12,6 @@ module.exports = class extends Generator {
 			this.log.error('working directory is not empty, beware hidden files (dot-files)')
 			process.exit(1)
 		}
-		if(!localName.match(/^generator-/)){
-			this.log.error('working directory name must start with "generator-"')
-		}
 		this.initial = {
 			scope: basename(resolve(process.cwd(), '..')),
 			localName,
