@@ -1,16 +1,15 @@
-
 ## <%= description %>
 
 #### example
-1. Change into the directory of your "scope" or  (for unscoped packages) where your global packages are.
-1. Create a directory with name of your new generator.
-Convention is lower case and dash-separated, and must start with "generator-", here we assume we want to generate "some-stuff":
+1. Change into you scope directory, where your packages (of corrsesponding scope) are
+1. Create a directory with name of your package.
+Convention is lower case and dash-separated, here we assume we want to generate "your-package-name":
 ```
-mkdir generator-some-stuff
+mkdir your-package-name
 ```
 1. Change into this directory
 ```
-cd generator-some-stuff
+cd your-package-name
 ```
 1. Create the scaffolding. You will be asked for some global settings, which will be saved in package.json:
 ```
