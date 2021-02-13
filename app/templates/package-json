@@ -6,8 +6,14 @@
     "app"
   ],
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "postinstall": "husky install"
   },
+  "husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
   "repository": {
     "type": "git",
     "url": "<%= repository %>"
