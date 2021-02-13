@@ -6,7 +6,13 @@
     "app"
   ],
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "postinstall": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -24,10 +30,13 @@
     "yeoman-generator": "^3.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
+    "eslint": "^7.20.0",
     "eslint-plugin-mocha": "^6.3.0",
+    "husky": "^5.0.9",
     "mocha": "^7.2.0",
     "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "yeoman-assert": "^3.1.1",
     "yeoman-test": "^3.0.0"
   }
 }
