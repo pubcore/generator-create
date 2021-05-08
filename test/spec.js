@@ -1,6 +1,5 @@
 const helpers = require('yeoman-test'),
-	{ basename, join, dirname } = require('path'),
-	{ file, fileContent } = require('yeoman-assert')
+	{ basename, join, dirname } = require('path')
 
 before(() => helpers.setUpTestDirectory(join(__dirname, 'generator-test')))
 
@@ -11,10 +10,14 @@ describe('ui generator', () => {
 			.withPrompts({
 				description: 'a test project',
 			})
-			.then((dir) => {
+			.then((runResult) => {
 				//by convention, default packagename is based on directory names
-				var testPackageName = basename(dirname(dir)) + '/' + basename(dir)
-				file(['package.json', 'test/spec.js', 'app/index.js'])
-				fileContent('package.json', RegExp(testPackageName, 'g'))
+				var testPackageName =
+          basename(dirname(runResult.cwd)) + '/' + basename(runResult.cwd)
+				runResult.assertFile(['package.json', 'test/spec.js', 'app/index.js'])
+				runResult.assertFileContent(
+					'package.json',
+					RegExp(testPackageName, 'g')
+				)
 			})).timeout(60000)
 })
